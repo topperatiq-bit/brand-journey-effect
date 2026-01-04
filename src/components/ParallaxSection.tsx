@@ -29,14 +29,14 @@ export const ParallaxSection = ({
       {backgroundImage && (
         <motion.div
           className="absolute inset-0 -z-10 parallax-layer"
-          style={{
-            y,
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            scale: 1.2,
-          }}
-        />
+          style={{ y, scale: 1.2 }}
+        >
+          <img
+            src={backgroundImage}
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </motion.div>
       )}
       {overlay && backgroundImage && (
         <div className="absolute inset-0 -z-10 bg-background/60" />
