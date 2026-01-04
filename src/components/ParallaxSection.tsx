@@ -28,20 +28,23 @@ export const ParallaxSection = ({
     <section ref={ref} className={`relative overflow-hidden ${className}`}>
       {backgroundImage && (
         <motion.div
-          className="absolute inset-0 -z-10 parallax-layer"
+          className="absolute inset-0 z-0 parallax-layer"
           style={{ y, scale: 1.2 }}
         >
           <img
             src={backgroundImage}
             alt=""
-            className="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover saturate-110 contrast-105"
           />
+          {overlay && (
+            <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/20 to-background/75" />
+          )}
         </motion.div>
       )}
-      {overlay && backgroundImage && (
-        <div className="absolute inset-0 -z-10 bg-background/60" />
-      )}
-      {children}
+
+      <div className="relative z-10">{children}</div>
     </section>
   );
 };
