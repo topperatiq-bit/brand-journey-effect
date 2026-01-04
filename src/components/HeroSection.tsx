@@ -34,7 +34,7 @@ export const HeroSection = () => {
 
       {/* Hero Content */}
       <motion.div
-        className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center"
+        className="relative z-10 flex h-full flex-col items-center justify-center px-6 pt-20 text-center"
         style={{ opacity }}
       >
         <motion.p
@@ -50,7 +50,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="font-display text-6xl md:text-8xl lg:text-9xl text-foreground story-text"
+          className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-foreground story-text"
         >
           MOVE
           <span className="text-gradient block">BEYOND</span>
@@ -61,7 +61,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-8 max-w-xl text-lg text-muted-foreground"
+          className="mt-6 md:mt-8 max-w-xl text-base md:text-lg text-muted-foreground px-4"
         >
           Every stride tells a story. Every finish line marks a new beginning.
           This is where champions are forged.
@@ -73,7 +73,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 1 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="mt-10 rounded-full bg-primary px-10 py-4 font-semibold text-primary-foreground transition-all hover:glow-primary"
+          className="mt-8 md:mt-10 rounded-full bg-primary px-8 md:px-10 py-3 md:py-4 font-semibold text-primary-foreground transition-all hover:glow-primary"
         >
           Explore the Journey
         </motion.button>
