@@ -15,21 +15,17 @@ export const HeroSection = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
 
   return (
-    <section
-      ref={ref}
-      className="relative h-screen overflow-hidden hero-section"
-    >
+    <section ref={ref} className="relative h-screen overflow-hidden hero-section">
       {/* Background Image with Parallax */}
-      <motion.div
-        className="absolute inset-0 -z-10"
-        style={{ y, scale }}
-      >
+      <motion.div className="absolute inset-0 z-0" style={{ y, scale }}>
         <img
           src={heroImage}
           alt="Athletic runner in motion"
-          className="h-full w-full object-cover"
+          loading="eager"
+          decoding="async"
+          className="h-full w-full object-cover saturate-110 contrast-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/15 to-background/85" />
       </motion.div>
 
       {/* Hero Content */}
@@ -45,7 +41,7 @@ export const HeroSection = () => {
         >
           Unleash Your Potential
         </motion.p>
-        
+
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,7 +57,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-6 md:mt-8 max-w-xl text-base md:text-lg text-muted-foreground px-4"
+          className="mt-6 md:mt-8 max-w-2xl text-base md:text-lg text-foreground/75 story-text px-4"
         >
           Every stride tells a story. Every finish line marks a new beginning.
           This is where champions are forged.
@@ -84,7 +80,7 @@ export const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
